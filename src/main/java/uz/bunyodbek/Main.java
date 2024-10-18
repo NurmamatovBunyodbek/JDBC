@@ -38,6 +38,19 @@ public class Main {
                     System.out.println(" Saqlandi ");
                     break;
                 }
+                case 2 :{
+                    MyDatabase myDatabase = new MyDatabase();
+                    myDatabase.read();
+                    break;
+                }
+                case 4 :{
+                    System.out.println(" Qaysi Userni o'chirmoqchisiz  id kiriting");
+                    int userid=scanner.nextInt();
+
+                    MyDatabase myDatabase = new MyDatabase();
+                    myDatabase.delete(userid);
+                    break;
+                }
 
             }
 
