@@ -43,6 +43,19 @@ public class Main {
                     myDatabase.read();
                     break;
                 }
+                case 3 :{
+                    System.out.println("Qaysi userni update qilmoqchisiz");
+                    int userid= scanner.nextInt();
+
+                    System.out.println(" New name ");
+                    String newname=scannerString.nextLine();
+
+                    MyDatabase myDatabase = new MyDatabase();
+                    myDatabase.update(userid,newname);
+                    System.out.println("Updated");
+
+                    break;
+                }
                 case 4 :{
                     System.out.println(" Qaysi Userni o'chirmoqchisiz  id kiriting");
                     int userid=scanner.nextInt();
