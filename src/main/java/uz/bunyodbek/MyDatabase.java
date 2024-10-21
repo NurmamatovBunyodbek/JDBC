@@ -79,5 +79,20 @@ public class MyDatabase {
 
     }
 
+    public void updateSurname( int id , String newsurname) {
+
+        try {
+            Connection connection = DriverManager.getConnection(databaseURL, usernamedatabse, passworddatabase);
+            Statement statement = connection.createStatement();
+
+            String query = "update nurbek set surname='" + newsurname + "' where id=" + id;
+            statement.execute(query);
+
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+
+
+    }
 
 }

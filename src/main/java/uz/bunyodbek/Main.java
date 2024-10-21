@@ -38,13 +38,13 @@ public class Main {
                     System.out.println(" Saqlandi ");
                     break;
                 }
-                case 2 :{
+                case 2: {
                     MyDatabase myDatabase = new MyDatabase();
                     myDatabase.read();
                     break;
                 }
-                case 3 :{
-                    System.out.println("Qaysi userni update qilmoqchisiz");
+                case 3: {
+                   /* System.out.println("Qaysi userni update qilmoqchisiz");
                     int userid= scanner.nextInt();
 
                     System.out.println(" New name ");
@@ -54,11 +54,50 @@ public class Main {
                     myDatabase.update(userid,newname);
                     System.out.println("Updated");
 
+                    break;*/
+
+
+                    System.out.println("""
+                            Qaysi parametr orqali update qilmoqchisiz
+                            1. Name
+                            2. Surname
+                            3. Phone
+                            """);
+                    int updateTanlash = scanner.nextInt();
+
+                    switch (updateTanlash) {
+
+                        case 1: {
+                            System.out.println("Qaysi userni update qilmoqchisiz");
+                            int userid = scanner.nextInt();
+
+                            System.out.println(" New name ");
+                            String newname = scannerString.nextLine();
+
+                            MyDatabase myDatabase = new MyDatabase();
+                            myDatabase.update(userid, newname);
+                            System.out.println("Updated");
+                            break;
+                        }
+                        case 2: {
+                            System.out.println(" Qaysi userni surname ini update qilmoqchisiz");
+                            int surnameUpdate = scanner.nextInt();
+                            System.out.println(" Enter new Surname");
+                            String newSurname = scannerString.nextLine();
+
+                            MyDatabase myDatabase = new MyDatabase();
+                            myDatabase.updateSurname(surnameUpdate, newSurname);
+                            System.out.println(" Surname Updated");
+                            break;
+                        }
+
+                    }
+
                     break;
                 }
-                case 4 :{
+                case 4: {
                     System.out.println(" Qaysi Userni o'chirmoqchisiz  id kiriting");
-                    int userid=scanner.nextInt();
+                    int userid = scanner.nextInt();
 
                     MyDatabase myDatabase = new MyDatabase();
                     myDatabase.delete(userid);
