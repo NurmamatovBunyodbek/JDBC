@@ -4,7 +4,7 @@ import java.sql.*;
 
 public class MyDatabase {
 
-    String databaseURL = "jdbc:postgresql://localhost:5432/nurbek";
+    String databaseURL = "jdbc:postgresql://localhost:5432/maktab";
     String usernamedatabse = "postgres";
     String passworddatabase = "root";
 
@@ -15,7 +15,7 @@ public class MyDatabase {
             Connection connection = DriverManager.getConnection(databaseURL, usernamedatabse, passworddatabase);
             Statement statement = connection.createStatement();
 
-            String query = "insert into nurbek(id, name , surname , phonenumber) values (" + user.getId() + ",'" + user.getName() + "','" + user.getSurname() + "','" + user.getPhonenumber() + "');";
+            String query = "insert into xodimlar(id, name , surname , phonenumber) values (" + user.getId() + ",'" + user.getName() + "','" + user.getSurname() + "','" + user.getPhonenumber() + "');";
             statement.execute(query);
 
         } catch (SQLException e) {
@@ -29,7 +29,7 @@ public class MyDatabase {
         try {
             Connection connection = DriverManager.getConnection(databaseURL, usernamedatabse, passworddatabase);
             Statement statement = connection.createStatement();
-            String query = "select * from nurbek";
+            String query = "select * from xodimlar";
             ResultSet resultSet = statement.executeQuery(query);
 
             while (resultSet.next()) {
@@ -52,7 +52,7 @@ public class MyDatabase {
         try {
             Connection connection = DriverManager.getConnection(databaseURL, usernamedatabse, passworddatabase);
             Statement statement = connection.createStatement();
-            String query = "delete from nurbek where id=" + id;
+            String query = "delete from xodimlar where id=" + id;
 
             statement.execute(query);
             System.out.println("O'chirildi");
@@ -69,7 +69,7 @@ public class MyDatabase {
             Connection connection = DriverManager.getConnection(databaseURL, usernamedatabse, passworddatabase);
             Statement statement = connection.createStatement();
 
-            String query = "update nurbek set name='" + newname + "' where id=" + id;
+            String query = "update xodimlar set name='" + newname + "' where id=" + id;
             statement.execute(query);
 
         } catch (SQLException e) {
@@ -85,7 +85,7 @@ public class MyDatabase {
             Connection connection = DriverManager.getConnection(databaseURL, usernamedatabse, passworddatabase);
             Statement statement = connection.createStatement();
 
-            String query = "update nurbek set surname='" + newsurname + "' where id=" + id;
+            String query = "update xodimlar set surname='" + newsurname + "' where id=" + id;
             statement.execute(query);
 
         } catch (SQLException e) {
