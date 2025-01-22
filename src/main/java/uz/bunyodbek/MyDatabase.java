@@ -15,7 +15,7 @@ public class MyDatabase {
             Connection connection = DriverManager.getConnection(databaseURL, usernamedatabse, passworddatabase);
             Statement statement = connection.createStatement();
 
-            String query = "insert into xodimlar(id, name , surname , phonenumber) values (" + user.getId() + ",'" + user.getName() + "','" + user.getSurname() + "','" + user.getPhonenumber() + "');";
+            String query = "insert into xodimlar(idraqam, name , surname , phonenumber) values (" + user.getId() + ",'" + user.getName() + "','" + user.getSurname() + "','" + user.getPhonenumber() + "');";
             statement.execute(query);
 
         } catch (SQLException e) {
